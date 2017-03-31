@@ -1,11 +1,10 @@
 eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
-     
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ 
 zuul:
-    routes:
-        books:
-            url:  http://localhost:8090
-        time:
-            url:  http://localhost:10001
+  routes:
+    books:
+      url:  http://localhost:8090
+    time:
+      url:  http://localhost:10001
