@@ -20,9 +20,9 @@ Create a code sample with:
 * Cassandra
 
 
-### Overview
+### Overview [+](https://docs.google.com/presentation/d/10euTci4EeAG7pqutGsG4zeWMpcl3d74v4EmdWcTPBr0/edit?usp=sharing)
 ![alt tag](overview.jpg)
- [+](https://docs.google.com/presentation/d/10euTci4EeAG7pqutGsG4zeWMpcl3d74v4EmdWcTPBr0/edit?usp=sharing)
+ 
 
  
 ### Run
@@ -42,16 +42,18 @@ Create a code sample with:
 ```
  
 ### URLs
-    Service Name    - Docker Name  - URL
-* [SpringBootAdmin  - admin        - http://localhost:8762](http://localhost:8762)
-* [Eureka           - eureka       - http://localhost:8761](http://localhost:8761)
-* [Server Config    - config       - http://localhost:8888/<SERVER>/<PROFILE>](http://localhost:8888)
-* [Zuul             - zuul         - http://localhost:8080](http://localhost:8080)
-* [Edge             - edge         - http://localhost:8070](http://localhost:8070)
-* [Middle           - middle       - http://localhost:8090](http://localhost:8090)
-* [Cassandra        - cassandra    - tcp://localhost:9042](http://localhost:9042)
 
-
+ |  Service Name    | Docker Name  | URL                                                          |
+ |------------------|--------------|--------------------------------------------------------------|
+ | SpringBootAdmin  | admin        | [http://localhost:8762](http://localhost:8762)               |
+ | Eureka           | eureka       | [http://localhost:8761](http://localhost:8761)               |
+ | Server Config    | config       | [http://localhost:8888/SERVER/PROFILE](http://localhost:8888)|
+ | Zuul             | zuul         | [http://localhost:8080](http://localhost:8080)               |
+ | Edge             | edge         | [http://localhost:8070](http://localhost:8070)               |
+ | Middle           | middle       | [http://localhost:8090](http://localhost:8090)               |
+ | Cassandra        | cassandra    | [tcp://localhost:9042](http://localhost:9042)                |
+                                                                                                
+                                                                                                
 ### References
 * https://spring.io/guides/gs/centralized-configuration/
 * https://spring.io/guides/gs/routing-and-filtering/
