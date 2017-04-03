@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: edge
+  cloud:
+    config:
+      uri: http://localhost:8888
+server:
+  port: 8070

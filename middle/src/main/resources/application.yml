@@ -1,0 +1,15 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: mykeyspace
+      contact-points: docker
+  application:
+    name: middle
+  cloud:
+    config:
+      uri: http://localhost:8888
+management:
+  security:
+    enabled: false
+server:
+  port: 8090
