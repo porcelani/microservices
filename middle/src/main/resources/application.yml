@@ -2,7 +2,7 @@ spring:
   data:
     cassandra:
       keyspace-name: mykeyspace
-      contact-points: docker
+      contact-points: localhost
   application:
     name: middle
   cloud:
@@ -13,3 +13,11 @@ management:
     enabled: false
 server:
   port: 8090
+
+---
+
+spring:
+  profiles: docker
+  data:
+    cassandra:
+      contact-points: cassandra

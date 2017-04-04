@@ -15,11 +15,9 @@ public class MiddleIT {
 
         given()
                 .header("Content-Type", "application/json;charset=UTF-8")
-                .body("{\"password\": \"simplePassword\"}")
+                .body("simplePassword")
         .expect()
                 .statusCode(200)
-                .body("score", equalTo("46"))
-                .body("complexity", equalTo("Good"))
         .when()
                 .post("/");
     }

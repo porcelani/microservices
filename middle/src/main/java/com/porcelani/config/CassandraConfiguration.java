@@ -37,7 +37,7 @@ class CassandraConfiguration {
         @Override
         protected List<String> getStartupScripts() {
             String createKeyspace = "CREATE KEYSPACE IF NOT EXISTS mykeyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3};";
-            String createTable = "CREATE TABLE IF NOT EXISTS mykeyspace.password (password text, score int, complexity text;";
+            String createTable = "CREATE TABLE IF NOT EXISTS mykeyspace.password (passwordCharacters text, score int, complexity text, PRIMARY KEY (passwordCharacters));";
 
             return asList(createKeyspace, createTable);
         }
