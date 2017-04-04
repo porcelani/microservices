@@ -11,6 +11,7 @@ Create a code sample with:
  
 ### Stack
 * Java
+* Junit
 * Maven
 * [Spring Cloud Netflix](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)
 * [Spring Boot Admin](http://codecentric.github.io/spring-boot-admin/1.4.6/)
@@ -69,10 +70,11 @@ Create a code sample with:
 
 
 ### TODO
+* [] Finish Passwords Resource;
+* [] Save PasswordAnalyzer in Cassandra;
+* [] Finish Simple Tests;
 * [] Finish docker-compose configuration;
 * [] Connected zuul -> edge -> middle (use core module);
-* [] Save PasswordAnalyzer in Cassandra;
-* [] Finish Passwords Resource;
 * [] Cassandra embedded to simple service automation test;
 * [] Fix SpringBootAdmin Details;
 * [] Finish some rules;

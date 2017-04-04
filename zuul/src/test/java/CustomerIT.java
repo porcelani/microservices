@@ -9,15 +9,12 @@ public class CustomerIT {
     public void should_create_customer() {
         given()
                 .header("Content-Type", "application/json;charset=UTF-8")
-                .body("{\n" +
-                        "  \"firstName\": \"Danilo\",\n" +
-                        "  \"lastName\": \"Porcelani\"\n" +
-                        "}")
+                .body("{\"password\": \"simplePassword\"}")
         .expect()
                 .statusCode(200)
-                .body("firstName", equalTo("Danilo"))
-                .body("lastName", equalTo("Porcelani"))
+                .body("score", equalTo("46"))
+                .body("complexity", equalTo("Good"))
         .when()
-                .post("/customers");
+                .post("/passwords");
     }
 }

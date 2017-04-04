@@ -1,7 +1,9 @@
-package com.porcelani.services;
+package com.porcelani.services.component;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Classifier {
-
 
     public String executa(int score) {
         if (score == 0) {

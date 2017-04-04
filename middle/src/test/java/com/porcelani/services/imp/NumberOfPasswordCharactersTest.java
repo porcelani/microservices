@@ -1,15 +1,15 @@
 package com.porcelani.services.imp;
 
 import org.junit.Test;
-import com.porcelani.models.Password;
+import com.porcelani.models.PasswordCharacters;
 
 import static org.junit.Assert.assertEquals;
 
-public class NumberOfCharactersTest {
+public class NumberOfPasswordCharactersTest {
 
 	@Test
 	public void test() {
 		NumberOfCharacters subject = new NumberOfCharacters();
-		assertEquals(32, subject.rate(new Password("abc12345")));
+		assertEquals(32, subject.rate(new PasswordCharacters("abc12345")));
 	}
 }

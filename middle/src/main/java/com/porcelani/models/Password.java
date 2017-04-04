@@ -1,65 +1,41 @@
 package com.porcelani.models;
 
-import java.text.Normalizer;
+import org.springframework.data.cassandra.mapping.Table;
 
-import static java.lang.Character.isDigit;
-import static java.lang.Character.isUpperCase;
+import java.io.Serializable;
 
-public class Password {
+@Table
+public class Password implements Serializable {
 
-	private static final String EMPTY = "";
-	private static final String REGEX = "[^a-zA-Z1-9 ]";
-	private String password;
+    private String passwordCharacters;
+    private Integer score;
+    private String complexity;
 
-	public Password(String senha) {
-		this.password = senha;
-	}
+    public Password() {
+    }
 
-	public int totalChars() {
-		return password.length();
-	}
+    public Password(String passwordCharacters, Integer score, String complexity) {
+        this.passwordCharacters=passwordCharacters;
+        this.score = score;
+        this.complexity = complexity;
+    }
 
-	public int totalNumbers() {
-		int cont = 0;
-		for (int i = 0; i < password.length(); i++) {
-			char c = password.charAt(i);
-			if (isDigit(c))
-				cont++;
-		}
-		return cont;
-	}
 
-	public int totalLetters() {
-		return totalChars() - totalSymbols() - totalNumbers();
-	}
+    public Integer getScore() {
+        return score;
+    }
 
-	public int totalUpercaseLetters() {
-		int cont = 0;
-		for (int i = 0; i < password.length(); i++) {
-			char c = password.charAt(i);
-			if (isUpperCase(c))
-				cont++;
-		}
-		return cont;
-	}
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 
-	public int totalLowercaseLetters() {
-		return totalLetters() - totalUpercaseLetters();
-	}
+    public String getComplexity() {
+        return complexity;
+    }
 
-	public int totalSymbols() {
-		String senhaSemSymbols = removeSymbols();
-		return totalChars() - senhaSemSymbols.length();
-	}
+    public void setComplexity(String t) {
+        this.complexity = t;
+    }
 
-	public String value(){
-		return password;
-	}
-	
-	private String removeSymbols() {
-		String text = Normalizer.normalize(password, Normalizer.Form.NFD);
-		return text.replaceAll(REGEX, EMPTY);
-	}
-
-	
 }
+

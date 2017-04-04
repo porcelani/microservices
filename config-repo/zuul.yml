@@ -1,6 +1,4 @@
 zuul:
   routes:
-    customers:
+    passwords:
       url:  http://localhost:8090
-    time:
-      url:  http://localhost:10001

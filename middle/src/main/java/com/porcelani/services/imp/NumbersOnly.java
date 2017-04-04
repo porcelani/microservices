@@ -1,15 +1,15 @@
 package com.porcelani.services.imp;
 
-import com.porcelani.models.Password;
+import com.porcelani.models.PasswordCharacters;
 import com.porcelani.services.roles.Deductions;
 import com.porcelani.services.type.Flat;
 
 public class NumbersOnly implements Deductions, Flat{
 
-	public int rate(Password password) {
+	public int rate(PasswordCharacters passwordCharacters) {
 		
-		if(password.totalLetters() == 0)
-			return -password.totalNumbers();
+		if(passwordCharacters.totalLetters() == 0)
+			return -passwordCharacters.totalNumbers();
 		return 0;
 	}
 }

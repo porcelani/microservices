@@ -1,21 +1,23 @@
-package com.porcelani.services;
+package com.porcelani.services.component;
 
-import com.porcelani.models.Password;
+import com.porcelani.models.PasswordCharacters;
 import org.reflections.Reflections;
 import com.porcelani.services.roles.Additions;
 import com.porcelani.services.roles.Deductions;
 import com.porcelani.services.roles.Rules;
+import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
+@Component
 public class FactoryDinamica {
 
 	private static final int DEFAULT_MIN = 0;
 	private static final int DEFAULT_MAX = 100;
 
-	public int executa(Password password) {
-		int additions = additions(password);
-		int deductions = deductions(password);
+	public Integer executa(PasswordCharacters passwordCharacters) {
+		int additions = additions(passwordCharacters);
+		int deductions = deductions(passwordCharacters);
 		int total = additions - deductions;
 
 		if(total < 0)
@@ -25,31 +27,31 @@ public class FactoryDinamica {
 		return  total;
 	}
 
-	private int additions(Password password) {
+	private int additions(PasswordCharacters passwordCharacters) {
 		final Class<Additions> statusClass = Additions.class;
 		final Set<Class<? extends Additions>> subClasses = new Reflections(
 				statusClass.getPackage().getName()).getSubTypesOf(statusClass);
 		int rate = 0;
 		for (final Class<? extends Rules> class1 : subClasses) {
-			rate = getRate(password, rate, class1);
+			rate = getRate(passwordCharacters, rate, class1);
 		}
 		return rate;
 	}
 
-	private int deductions(Password password) {
+	private int deductions(PasswordCharacters passwordCharacters) {
 		final Class<Deductions> statusClass = Deductions.class;
 		final Set<Class<? extends Deductions>> subClasses = new Reflections(
 				statusClass.getPackage().getName()).getSubTypesOf(statusClass);
 		int rate = 0;
 		for (final Class<? extends Rules> class1 : subClasses)
-			rate = getRate(password, rate, class1);
+			rate = getRate(passwordCharacters, rate, class1);
 		return rate;
 	}
 
-	private int getRate(Password password, int rate, Class<? extends Rules> class1) {
+	private int getRate(PasswordCharacters passwordCharacters, int rate, Class<? extends Rules> class1) {
 		try {
 			final Rules clazz = class1.newInstance();
-			rate = clazz.rate(password);
+			rate = clazz.rate(passwordCharacters);
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

@@ -1,5 +1,6 @@
 package com.porcelani.services;
 
+import com.porcelani.services.component.Classifier;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
