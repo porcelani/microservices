@@ -1,19 +1,14 @@
-package com.porcelani;
-
-import com.jayway.restassured.RestAssured;
 import org.junit.Test;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class MiddleIT {
+public class ZuulIT {
 
     public static final String SIMPLE_PASSWORD = "simple";
 
     @Test
-    public void should_review_password() {
-        RestAssured.port = 8090;
-
+    public void should_create_customer() {
         given()
                 .header("Content-Type", "application/json;charset=UTF-8")
                 .body(SIMPLE_PASSWORD)
@@ -23,6 +18,6 @@ public class MiddleIT {
                 .body("score", equalTo(8))
                 .body("complexity", equalTo("Very Weak"))
         .when()
-                .post("/");
+                .post("/passwords");
     }
 }

@@ -26,24 +26,12 @@ public class Password implements Serializable {
         return passwordCharacters;
     }
 
-    public void setPasswordCharacters(String passwordCharacters) {
-        this.passwordCharacters = passwordCharacters;
-    }
-
     public Integer getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
-    }
-
     public String getComplexity() {
         return complexity;
-    }
-
-    public void setComplexity(String t) {
-        this.complexity = t;
     }
 
 }

@@ -2,35 +2,35 @@ package com.porcelani.services;
 
 import com.porcelani.models.Password;
 import com.porcelani.repositories.PasswordRepository;
-import com.porcelani.services.component.Classifier;
-import com.porcelani.services.component.FactoryDinamica;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.verify;
+import static org.mockito.MockitoAnnotations.initMocks;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PasswordReviewServiceTest {
 
-    @Spy
-    private Classifier classifier;
-    @Spy
-    private FactoryDinamica factoryDinamica;
+    public static final String SIMPLE_PASSWORD = "simplePassword";
+    @Mock
+    private Analyzer analyzer;
     @Mock
     private PasswordRepository passwordRepository;
 
     @InjectMocks
     private PasswordReviewService passwordReviewService;
 
-
-    @Ignore
     @Test
-    public void should_() {
-        MockitoAnnotations.initMocks(this);
+    public void should_verify_calls() {
+        initMocks(this);
 
-        Password review = passwordReviewService.review("simplePassword");
-        Assert.assertEquals("", review);
+        passwordReviewService.review(SIMPLE_PASSWORD);
+
+        verify(analyzer).analyze(SIMPLE_PASSWORD);
+        verify(passwordRepository).save(any(Password.class));
     }
 }

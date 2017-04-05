@@ -2,7 +2,7 @@ spring:
   data:
     cassandra:
       keyspace-name: mykeyspace
-      contact-points: localhost
+      contact-points: docker
   application:
     name: middle
   cloud:

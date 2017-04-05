@@ -23,7 +23,7 @@ public class PasswordResource {
     }
 
     @RequestMapping(method = POST, value = "/")
-    public Password createCustomer(@RequestBody String password) {
+    public Password postPassword(@RequestBody String password) {
         return passwordReviewService.review(password);
     }
 }

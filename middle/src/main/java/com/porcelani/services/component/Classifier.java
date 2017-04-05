@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Classifier {
 
-    public String executa(int score) {
+    public String command(int score) {
         if (score == 0) {
             return "Too Short";
         } else if (score < 20) {

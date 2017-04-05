@@ -11,8 +11,8 @@ public class PasswordCharacters {
 	private static final String REGEX = "[^a-zA-Z1-9 ]";
 	private String password;
 
-	public PasswordCharacters(String senha) {
-		this.password = senha;
+	public PasswordCharacters(String password) {
+		this.password = password;
 	}
 
 	public int totalChars() {
@@ -48,15 +48,15 @@ public class PasswordCharacters {
 	}
 
 	public int totalSymbols() {
-		String senhaSemSymbols = removeSymbols();
-		return totalChars() - senhaSemSymbols.length();
+		String passwordWithoutSybols = clearSymbols();
+		return totalChars() - passwordWithoutSybols.length();
 	}
 
 	public String value(){
 		return password;
 	}
 	
-	private String removeSymbols() {
+	private String clearSymbols() {
 		String text = Normalizer.normalize(password, Normalizer.Form.NFD);
 		return text.replaceAll(REGEX, EMPTY);
 	}

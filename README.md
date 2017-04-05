@@ -4,21 +4,24 @@
 Create a code sample with:
 * Rest application (SpringBoot);
 * Microservices architecture;
+* Database Connection;
 * Docker
 
 ### Rules implementation
  Password security scanner(http://passwordmeter.com);
- 
+ I will try create a simple resource, Passwords, that receive a character to analyze and persist.
+  
 ### Stack
 * Java
-* Junit
 * Maven
 * [Spring Cloud Netflix](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)
 * [Spring Boot Admin](http://codecentric.github.io/spring-boot-admin/1.4.6/)
-* Docker
-  * [Docker Maven Plugin](https://github.com/spotify/docker-maven-plugin)
-* [REST-assured](http://rest-assured.io/)
 * Cassandra
+  * [Docker Maven Plugin](https://github.com/spotify/docker-maven-plugin)
+* Junit
+* [REST-assured](http://rest-assured.io/)
+* Mockito
+* Docker
 
 
 ### Overview [+](https://docs.google.com/presentation/d/10euTci4EeAG7pqutGsG4zeWMpcl3d74v4EmdWcTPBr0/edit?usp=sharing)
@@ -70,14 +73,14 @@ Create a code sample with:
 
 
 ### TODO
-* [] Finish Passwords Resource;
-* [] Save PasswordAnalyzer in Cassandra;
-* [] Finish Simple Tests;
+* [x] Finish simple Passwords Resource;
+* [x] Save Password in Cassandra;
+* [x] Finish Simple Tests;
 * [] Finish docker-compose configuration;
 * [] Connected zuul -> edge -> middle (use core module);
+* [] Finish some rules;
 * [] Cassandra embedded to simple service automation test;
 * [] Fix SpringBootAdmin Details;
-* [] Finish some rules;
 * [] Include Hystrix (https://exampledriven.wordpress.com/2016/07/05/spring-cloud-hystrix-example/);
 * [] Eureka + SpringBootAdmin;
 * [] WireMock can Simplify some Integrations Tests;
