@@ -2,3 +2,12 @@ zuul:
   routes:
     passwords:
       url:  http://localhost:8090
+
+---
+
+spring:
+  profiles: docker
+zuul:
+  routes:
+    passwords:
+      url:  http://middle:8090
