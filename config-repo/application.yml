@@ -10,9 +10,6 @@ spring:
     cloud:
       config:
         uri: http://config:8888
-    boot:
-        admin:
-           url: http://admin:8080
 eureka:
   client:
     serviceUrl:
