@@ -17,6 +17,6 @@ class PingRestController {
 
     @RequestMapping(value = "/ping")
     public String available() {
-        return "edge pong";
+        return "zuul pong";
     }
 }

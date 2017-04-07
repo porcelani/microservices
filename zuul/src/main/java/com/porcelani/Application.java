@@ -7,18 +7,17 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
-@EnableEurekaClient
 @EnableZuulProxy
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public SimpleFilter simpleFilter() {
-        return new SimpleFilter();
-    }
+//    @Bean
+//    public SimpleFilter simpleFilter() {
+//        return new SimpleFilter();
+//    }
 
 }

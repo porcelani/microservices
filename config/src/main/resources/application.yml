@@ -5,16 +5,8 @@ spring:
         git:
           uri: https://github.com/porcelani/microservices
           searchPaths: config-repo
-                
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
 
 ---
 
 spring:
     profiles: docker
-    boot:
-        admin:
-           url: http://admin:8080

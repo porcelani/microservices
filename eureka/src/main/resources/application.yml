@@ -6,15 +6,8 @@ eureka:
         fetchRegistry: false
     serviceUrl:
         defaultZone: http://${eureka.instace.hostname}:${server.port}/eureka
-spring:
-    boot:
-        admin:
-            url: http://localhost:8762
-
 ---
 
 spring:
     profiles: docker
-    boot:
-        admin:
-           url: http://admin:8080
+

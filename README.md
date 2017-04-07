@@ -45,29 +45,60 @@ Create a code sample with:
  
 ```
  
-### URLs
+After some minutes, you can visit the client directly at [http://localhost:8080/edge/passwords](http://localhost:8080/edge/passwords) 
+The endpoint will show the passwords saved in Cassandra;
 
- |  Service Name    | Docker Name  | URL                                                          |
- |------------------|--------------|--------------------------------------------------------------|
- | SpringBootAdmin  | admin        | [http://localhost:8762](http://localhost:8762)               |
- | Eureka           | eureka       | [http://localhost:8761](http://localhost:8761)               |
- | Server Config    | config       | [http://localhost:8888/SERVER/PROFILE](http://localhost:8888)|
- | Zuul             | zuul         | [http://localhost:8080](http://localhost:8080)               |
- | Edge             | edge         | [http://localhost:8070](http://localhost:8070)               |
- | Middle           | middle       | [http://localhost:8090](http://localhost:8090)               |
- | Cassandra        | cassandra    | [tcp://localhost:9042](http://localhost:9042)                |
+```
+[]
+```
+
+You can create some register in Cassandra;
+
+```
+curl \
+    -H "Content-Type: application/json" \
+    -X POST \
+    -d 'simplePassword' \
+    http://localhost:8080/edge/passwords
+```
+
+This will be return:
+
+```
+{
+    "passwordCharacters":"simplePassword",
+    "score":48,
+    "complexity":"Good"
+}
+```
+
+### Others URLs
+
+ |  Service Name    | Docker Name  | URL                                                                 |
+ |------------------|--------------|---------------------------------------------------------------------|
+ | SpringBootAdmin  | admin        | [http://localhost:8762](http://localhost:8762)                      |
+ | Eureka           | eureka       | [http://localhost:8761](http://localhost:8761)                      |
+ | Server Config    | config       | [http://localhost:8888/APPLICATION/PROFILE](http://localhost:8888)  |
+ | Zuul             | zuul         | [http://localhost:8080/APPLICATION/RESOURCE](http://localhost:8080) |
+ | Edge             | edge         | [http://localhost:8070](http://localhost:8070)                      |
+ | Middle           | middle       | [http://localhost:8090](http://localhost:8090)                      |
+ | Cassandra        | cassandra    | [tcp://localhost:9042](tcp://localhost:9042)                        |
                                                                                                 
                                                                                                 
 ### References
 * https://spring.io/guides/gs/centralized-configuration/
-* https://spring.io/guides/gs/routing-and-filtering/
-* https://cloud.spring.io/spring-cloud-config/spring-cloud-config.html
 * https://spring.io/guides/gs/service-registration-and-discovery/
+* https://cloud.spring.io/spring-cloud-config/spring-cloud-config.html
+
+* https://spring.io/guides/gs/routing-and-filtering/
 * https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka
+
 * https://github.com/materasystems/crud-microservices/
 * https://github.com/andreariano/messageexchange-app
 * https://github.com/ggoveia/semaphore
 * https://github.com/wisner23/microservices-java
+* https://github.com/mcwumbly/spring-boot-eureka-example.git
+
 * https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples/spring-boot-sample-data-cassandra
 * http://docs.spring.io/spring-data/cassandra/docs/1.5.1.RELEASE/reference/html/
 

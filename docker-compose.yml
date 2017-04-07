@@ -11,18 +11,28 @@ services:
     image: aetas/spring-boot-admin-docker:1.4.1
     ports:
       - "8762:8080"
-  eureka:
-    container_name: eureka
-    build: ./eureka
-    ports:
-      - "8761:8761"
   config:
     container_name: config
     build: ./config
     ports:
       - "8888:8888"
+  eureka:
+    container_name: eureka
+    build: ./eureka
+    ports:
+      - "8761:8761"
+  edge:
+    container_name: edge
+    build: ./edge
+    ports:
+      - "8070:8070"
   zuul:
     container_name: zuul
     build: ./zuul
     ports:
-      - "80:8080"
+      - "8080:8080"
+  middle:
+    container_name: middle
+    build: ./middle
+    ports:
+      - "8090:8090"
