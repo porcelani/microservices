@@ -16,11 +16,6 @@ class ResourcesRestController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/ping")
-    public String available() {
-        return "edge pong";
-    }
-
     @RequestMapping("/passwords")
     public String getPasswords() {
         ResponseEntity<String> response = this.restTemplate.getForEntity("http://middle/", String.class);
