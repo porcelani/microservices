@@ -1,16 +1,16 @@
 spring:
   application:
     name: zuul
-#  cloud:
-#    config:
-#      uri: http://localhost:8888
 server:
   port: 8080
 
 ---
 
 spring:
-    profiles: docker
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config:8888
 eureka:
   client:
     serviceUrl:

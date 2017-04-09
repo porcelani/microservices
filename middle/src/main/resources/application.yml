@@ -21,6 +21,9 @@ spring:
   data:
     cassandra:
       contact-points: cassandra
+  cloud:
+    config:
+      uri: http://config:8888
 eureka:
   client:
     serviceUrl:
