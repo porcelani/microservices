@@ -3,7 +3,8 @@ package com.porcelani.services;
 import com.porcelani.models.Password;
 import com.porcelani.models.PasswordCharacters;
 import com.porcelani.services.component.Classifier;
-import com.porcelani.services.component.DynamicFactory;
+import com.porcelani.services.component.Complexity;
+import com.porcelani.services.component.CalculatePasswordScore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,13 +15,13 @@ public class Analyzer {
     private Classifier classifier;
 
     @Autowired
-    private DynamicFactory dynamicFactory;
+    private CalculatePasswordScore calculatePasswordScore;
 
     protected Password analyze(String password) {
         PasswordCharacters passwordCharacters = new PasswordCharacters(password);
-        Integer score = dynamicFactory.command(passwordCharacters);
-        String complexity = classifier.command(score);
+        Integer score = calculatePasswordScore.command(passwordCharacters);
+        Complexity complexity = classifier.command(score);
 
-        return new Password(password, score, complexity);
+        return new Password(password, score, complexity.getValue());
     }
 }

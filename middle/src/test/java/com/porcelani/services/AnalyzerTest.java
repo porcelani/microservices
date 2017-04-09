@@ -2,7 +2,7 @@ package com.porcelani.services;
 
 import com.porcelani.models.Password;
 import com.porcelani.services.component.Classifier;
-import com.porcelani.services.component.DynamicFactory;
+import com.porcelani.services.component.CalculatePasswordScore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -19,7 +19,7 @@ public class AnalyzerTest {
     @Spy
     private Classifier classifier;
     @Spy
-    private DynamicFactory dynamicFactory;
+    private CalculatePasswordScore calculatePasswordScore;
 
     @InjectMocks
     private Analyzer analyzer;

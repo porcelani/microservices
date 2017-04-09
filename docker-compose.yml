@@ -1,11 +1,13 @@
 version: '2'
 services:
+
   cassandra:
     container_name: cassandra
     image: spotify/cassandra
     ports:
       - "9160:9160"
       - "9042:9042"
+
   admin:
     container_name: admin
     image: aetas/spring-boot-admin-docker:1.4.1
@@ -21,18 +23,34 @@ services:
     build: ./eureka
     ports:
       - "8761:8761"
-  edge:
-    container_name: edge
-    build: ./edge
-    ports:
-      - "8070:8070"
+
   zuul:
     container_name: zuul
     build: ./zuul
     ports:
       - "8080:8080"
+    depends_on:
+      - admin
+      - config
+      - eureka
+
+  edge:
+    container_name: edge
+    build: ./edge
+    ports:
+      - "8070:8070"
+    depends_on:
+      - admin
+      - config
+      - eureka
+
   middle:
     container_name: middle
     build: ./middle
     ports:
       - "8090:8090"
+    depends_on:
+      - admin
+      - config
+      - eureka
+      - cassandra

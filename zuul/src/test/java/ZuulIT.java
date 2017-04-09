@@ -1,3 +1,5 @@
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.parsing.Parser;
 import org.junit.Test;
 
 import static com.jayway.restassured.RestAssured.given;
@@ -9,6 +11,10 @@ public class ZuulIT {
 
     @Test
     public void should_create_customer() {
+        RestAssured.baseURI="http://localhost";
+        RestAssured.port=8080;
+        RestAssured.registerParser("text/plain", Parser.JSON);
+
         given()
                 .header("Content-Type", "application/json;charset=UTF-8")
                 .body(SIMPLE_PASSWORD)
@@ -18,6 +24,6 @@ public class ZuulIT {
                 .body("score", equalTo(8))
                 .body("complexity", equalTo("Very Weak"))
         .when()
-                .post("/passwords");
+                .post("/edge/passwords");
     }
 }

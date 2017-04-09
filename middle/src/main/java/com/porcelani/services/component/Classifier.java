@@ -2,21 +2,28 @@ package com.porcelani.services.component;
 
 import org.springframework.stereotype.Component;
 
+import static com.porcelani.services.component.Complexity.*;
+
+/**
+ *
+ */
+
 @Component
 public class Classifier {
 
-    public String command(int score) {
+
+    public Complexity command(int score) {
         if (score == 0) {
-            return "Too Short";
+            return TOO_SHORT;
         } else if (score < 20) {
-            return "Very Weak";
+            return VERY_WEAK;
         } else if (score < 40) {
-            return "Weak";
+            return WEAK;
         } else if (score < 60) {
-            return "Good";
+            return GOOD;
         } else if (score < 80) {
-            return "Strong";
+            return STRONG;
         }
-        return "Very Strong";
+        return VERY_STRONG;
     }
 }

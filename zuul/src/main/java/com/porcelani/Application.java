@@ -15,9 +15,9 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-//    @Bean
-//    public SimpleFilter simpleFilter() {
-//        return new SimpleFilter();
-//    }
+    @Bean
+    public SimpleFilter simpleFilter() {
+        return new SimpleFilter();
+    }
 
 }

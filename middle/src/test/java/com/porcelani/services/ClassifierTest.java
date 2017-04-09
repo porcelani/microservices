@@ -1,26 +1,36 @@
 package com.porcelani.services;
 
 import com.porcelani.services.component.Classifier;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class ClassifierTest {
 
+    private Classifier classifier;
+
+    @Before
+    public void setUp() {
+        classifier = new Classifier();
+    }
+
     @Test
     public void should_classifier_password() {
+        assertEquals("Too Short", getComplexity(0));
+        assertEquals("Very Weak", getComplexity(10));
+        assertEquals("Very Weak", getComplexity(15));
+        assertEquals("Weak", getComplexity(20));
+        assertEquals("Weak", getComplexity(30));
+        assertEquals("Good", getComplexity(40));
+        assertEquals("Good", getComplexity(50));
+        assertEquals("Strong", getComplexity(60));
+        assertEquals("Strong", getComplexity(70));
+        assertEquals("Very Strong", getComplexity(80));
+        assertEquals("Very Strong", getComplexity(90));
+    }
 
-        Classifier classifier = new Classifier();
-        assertEquals("Too Short", classifier.command(0));
-        assertEquals("Very Weak", classifier.command(10));
-        assertEquals("Very Weak", classifier.command(15));
-        assertEquals("Weak", classifier.command(20));
-        assertEquals("Weak", classifier.command(30));
-        assertEquals("Good", classifier.command(40));
-        assertEquals("Good", classifier.command(50));
-        assertEquals("Strong", classifier.command(60));
-        assertEquals("Strong", classifier.command(70));
-        assertEquals("Very Strong", classifier.command(80));
-        assertEquals("Very Strong", classifier.command(90));
+    private String getComplexity(int score) {
+        return classifier.command(score).getValue();
     }
 }

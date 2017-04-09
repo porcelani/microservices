@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
-class esourcesRestController {
+class ResourcesRestController {
 
     @Autowired
     private RestTemplate restTemplate;

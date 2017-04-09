@@ -9,8 +9,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
+/**
+ *
+ */
+
 @Component
-public class DynamicFactory {
+public class CalculatePasswordScore {
 
     private static final int DEFAULT_MIN = 0;
     private static final int DEFAULT_MAX = 100;

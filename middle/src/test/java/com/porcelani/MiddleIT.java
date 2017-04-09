@@ -1,6 +1,7 @@
 package com.porcelani;
 
 import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.parsing.Parser;
 import org.junit.Test;
 
 import static com.jayway.restassured.RestAssured.given;
@@ -12,7 +13,8 @@ public class MiddleIT {
 
     @Test
     public void should_review_password() {
-        RestAssured.port = 8090;
+        RestAssured.baseURI="http://localhost";
+        RestAssured.port=8090;
 
         given()
                 .header("Content-Type", "application/json;charset=UTF-8")
