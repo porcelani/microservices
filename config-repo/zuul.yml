@@ -2,6 +2,3 @@
 
 spring:
   profiles: docker
-  boot:
-    admin:
-      url: http://admin:8080

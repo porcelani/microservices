@@ -107,9 +107,12 @@ This will be return:
 * [x] Finish simple Passwords Resource;
 * [x] Save Password in Cassandra;
 * [x] Finish Simple Tests;
-* [] Finish docker-compose configuration;
-* [] Connected zuul -> edge -> middle (use core module);
+* [x] Finish docker-compose configuration;
+* [x] Connected zuul -> edge -> middle;
 * [] Finish some rules;
+* [] Include Javadoc;
+* [] Fix Server Config; 
+* [] Use core module;
 * [] Cassandra embedded to simple service automation test;
 * [] Fix SpringBootAdmin Details;
 * [] Include Hystrix (https://exampledriven.wordpress.com/2016/07/05/spring-cloud-hystrix-example/);
