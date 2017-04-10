@@ -5,9 +5,6 @@ spring:
       contact-points: localhost
   application:
     name: middle
-#  cloud:
-#    config:
-#      uri: http://localhost:8888
 management:
   security:
     enabled: false

@@ -5,6 +5,7 @@ import com.porcelani.services.roles.Additions;
 import com.porcelani.services.roles.Deductions;
 import com.porcelani.services.roles.Rules;
 import org.reflections.Reflections;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
  *
  */
 
+@Scope("prototype")
 @Component
 public class CalculatePasswordScore {
 
