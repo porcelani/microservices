@@ -1,3 +1,5 @@
+message: Hello Spring Config
+
 ---
 
 spring:
