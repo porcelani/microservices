@@ -1,5 +1,6 @@
 package com.porcelani.services.roles.common;
 
-public abstract class Sequential {
-
-}
+/**
+ * Behaviors shared by addition and subtraction rules.
+ */
+public abstract class Sequential {}

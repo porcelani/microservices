@@ -1,5 +1,6 @@
 package com.porcelani.services.roles;
 
-public interface Additions extends Rules {
-
-}
+/**
+ * Rules that adds scores.
+ */
+public interface Additions extends Rules {}

@@ -1,18 +1,18 @@
 package com.porcelani.services;
 
-import com.porcelani.services.component.Classifier;
+import com.porcelani.services.component.ScoreClassifier;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ClassifierTest {
+public class ScoreClassifierTest {
 
-    private Classifier classifier;
+    private ScoreClassifier scoreClassifier;
 
     @Before
     public void setUp() {
-        classifier = new Classifier();
+        scoreClassifier = new ScoreClassifier();
     }
 
     @Test
@@ -31,6 +31,6 @@ public class ClassifierTest {
     }
 
     private String getComplexity(int score) {
-        return classifier.command(score).getValue();
+        return scoreClassifier.command(score).getValue();
     }
 }

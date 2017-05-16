@@ -5,6 +5,9 @@ import java.text.Normalizer;
 import static java.lang.Character.isDigit;
 import static java.lang.Character.isUpperCase;
 
+/**
+ * Object that know a string characteristics
+ **/
 public class PasswordCharacters {
 
     private static final String EMPTY = "";
@@ -34,7 +37,7 @@ public class PasswordCharacters {
         return totalChars() - totalSymbols() - totalNumbers();
     }
 
-    public int totalUpercaseLetters() {
+    public int totalUppercaseLetters() {
         int cont = 0;
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
@@ -46,12 +49,12 @@ public class PasswordCharacters {
     }
 
     public int totalLowercaseLetters() {
-        return totalLetters() - totalUpercaseLetters();
+        return totalLetters() - totalUppercaseLetters();
     }
 
     public int totalSymbols() {
-        String passwordWithoutSybols = clearSymbols();
-        return totalChars() - passwordWithoutSybols.length();
+        String passwordWithoutSymbols = clearSymbols();
+        return totalChars() - passwordWithoutSymbols.length();
     }
 
     public String value() {

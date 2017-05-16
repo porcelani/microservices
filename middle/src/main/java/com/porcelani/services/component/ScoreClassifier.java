@@ -4,13 +4,8 @@ import org.springframework.stereotype.Component;
 
 import static com.porcelani.services.component.Complexity.*;
 
-/**
- *
- */
-
 @Component
-public class Classifier {
-
+public class ScoreClassifier {
 
     public Complexity command(int score) {
         if (score == 0) {

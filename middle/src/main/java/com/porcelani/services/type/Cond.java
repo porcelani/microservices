@@ -1,5 +1,6 @@
 package com.porcelani.services.type;
 
-public interface Cond {
-
-}
+/**
+ * Rates that add/remove depending on additional factors.
+ */
+public interface Cond {}

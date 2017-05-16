@@ -1,7 +1,7 @@
 package com.porcelani.services;
 
 import com.porcelani.models.Password;
-import com.porcelani.services.component.Classifier;
+import com.porcelani.services.component.ScoreClassifier;
 import com.porcelani.services.component.CalculatePasswordScore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ public class AnalyzerTest {
     private static final String SIMPLE_PASSWORD = "simple";
 
     @Spy
-    private Classifier classifier;
+    private ScoreClassifier scoreClassifier;
     @Spy
     private CalculatePasswordScore calculatePasswordScore;
 

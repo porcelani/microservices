@@ -13,7 +13,7 @@ public class PasswordCharactersTest {
         assertEquals(13, passwordCharacters.totalChars());
         assertEquals(3, passwordCharacters.totalNumbers());
         assertEquals(8, passwordCharacters.totalLetters());
-        assertEquals(3, passwordCharacters.totalUpercaseLetters());
+        assertEquals(3, passwordCharacters.totalUppercaseLetters());
         assertEquals(5, passwordCharacters.totalLowercaseLetters());
         assertEquals(2, passwordCharacters.totalSymbols());
     }

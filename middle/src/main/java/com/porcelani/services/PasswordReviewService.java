@@ -8,9 +8,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- *
+ * Service call in endpoint that analyze and save the password
  */
-
 @Service
 public class PasswordReviewService {
 
@@ -22,8 +21,7 @@ public class PasswordReviewService {
 
     public Password review(String password) {
         Password passwordReviewed = analyzer.analyze(password);
-        Password passwordSaved = passwordRepository.save(passwordReviewed);
-        return passwordSaved;
+        return passwordRepository.save(passwordReviewed);
     }
 
     public List<Password> reviews() {

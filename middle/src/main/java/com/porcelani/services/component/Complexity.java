@@ -1,8 +1,5 @@
 package com.porcelani.services.component;
 
-/**
- *
- */
 public enum Complexity {
     TOO_SHORT("Too Short"),
     VERY_WEAK("Very Weak"),
@@ -17,8 +14,7 @@ public enum Complexity {
         complexity = value;
     }
 
-    public String getValue(){
+    public String getValue() {
         return complexity;
     }
-
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import static java.lang.String.valueOf;
 
 /**
- *
+ * Behaviors shared by addition and subtraction rules.
  */
 public abstract class Consecutive {
 

@@ -26,4 +26,19 @@ public class ZuulIT {
         .when()
                 .post("/edge/passwords");
     }
+
+    @Test
+    public void should_server_config_works() {
+        RestAssured.baseURI="http://localhost";
+        RestAssured.port=8080;
+        RestAssured.registerParser("text/plain", Parser.JSON);
+
+        given()
+                .header("Content-Type", "application/json;charset=UTF-8")
+        .expect()
+                .statusCode(200)
+                .body(equalTo("Hello Spring Config"))
+        .when()
+                .post("/message");
+    }
 }

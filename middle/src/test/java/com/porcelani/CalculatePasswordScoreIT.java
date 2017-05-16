@@ -10,9 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.assertNotEquals;
 
 /**
- * Validate @Scope("prototype")
+ * Validate @Scope("prototype") to not create any inconsistency
  */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CalculatePasswordScoreIT {

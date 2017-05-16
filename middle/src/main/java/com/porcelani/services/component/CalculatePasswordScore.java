@@ -11,9 +11,8 @@ import org.springframework.stereotype.Component;
 import java.util.Set;
 
 /**
- *
+ * This class will calculate all scores (additions and deductions) of all rules implemented in the project.
  */
-
 @Scope("prototype")
 @Component
 public class CalculatePasswordScore {
@@ -21,6 +20,11 @@ public class CalculatePasswordScore {
     private static final int DEFAULT_MIN = 0;
     private static final int DEFAULT_MAX = 100;
 
+
+    /**
+     * @param passwordCharacters object that represent the password string
+     * @return score total from password.
+     */
     public Integer command(PasswordCharacters passwordCharacters) {
         int additions = additions(passwordCharacters);
         int deductions = deductions(passwordCharacters);
@@ -33,7 +37,7 @@ public class CalculatePasswordScore {
         return total;
     }
 
-    protected int additions(PasswordCharacters passwordCharacters) {
+    private int additions(PasswordCharacters passwordCharacters) {
         final Class<Additions> statusClass = Additions.class;
         String name = statusClass.getPackage().getName();
         final Set<Class<? extends Additions>> subClasses = new Reflections(name).getSubTypesOf(statusClass);
@@ -69,8 +73,8 @@ public class CalculatePasswordScore {
         try {
             final Rules clazz = class1.newInstance();
             rate = clazz.rate(passwordCharacters);
-            System.out.println("Rules - "+ class1.getSimpleName());
-            System.out.println("Bonus - "+ rate );
+            System.out.println("Rules - " + class1.getSimpleName());
+            System.out.println("Bonus - " + rate);
         } catch (Exception e) {
             throw new RuntimeException();
         }
